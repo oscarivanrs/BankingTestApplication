@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Test Account</title>
+    </head>
+    <body>
+        <div>
+            <h1>Welcome</h1>
+            <form action="http://localhost:8080/api/v1/account/balance">  
+                <label>Balance:</label>
+                <input type="submit" value="Check"/>
+            </form>
+            <br>
+            <form action="http://localhost:8080/api/v1/account/transactions" method="get">  
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="fromAccountingDate" value="2022-03-23" min="2018-01-01">
+                <label for="end">End date:</label>
+                <input type="date" id="end" name="toAccountingDate" value="2022-03-23" min="2018-01-01">
+                <input type="submit" value="TRANSACTIONS"/>
+            </form>
+            <form action="http://localhost:8080/api/v1/account/transfer" method="get">  
+                <label for="iban">BENEFICIARY:</label>
+                <input type="text" id="beneficiary" name="beneficiary" minlength="8" maxlength="8">
+                <label for="numer">Amount:</label>
+                <input type="number" id="amount" name="amount" min="0.01" step="0.01">
+                <input type="submit" value="TRANSFER" onClick="checkform();"/>
+            </form>
+        </div>
+    </body>
+</HTML>
